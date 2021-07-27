@@ -1,30 +1,40 @@
 import Bubble from './Bubble';
 
-const Hero = () => {
+const Hero = ({ themeState }) => {
   const skills = [
-    { src: '.images/svgs/html.svg', alt: 'HTML' },
-    { src: '.images/svgs/css.svg', alt: 'CSS' },
-    { src: '.images/svgs/javascript.svg', alt: 'JS - Javascript' },
-    { src: '.images/svgs/react.svg', alt: 'React JS' },
+    { id: 0, src: './images/svgs/html.svg', alt: 'HTML' },
+    { id: 1, src: './images/svgs/css.svg', alt: 'CSS' },
+    { id: 2, src: './images/svgs/javascript.svg', alt: 'JS - Javascript' },
+    { id: 3, src: './images/svgs/react.svg', alt: 'React JS' },
+    { id: 4, src: './images/svgs/redux.svg', alt: 'Redux' },
+    { id: 5, src: './images/svgs/nodejs.svg', alt: 'Node JS' },
+    { id: 6, src: './images/svgs/express.svg', alt: 'Express JS' },
+    { id: 7, src: './images/svgs/mongo.svg', alt: 'Mongo DB' },
+    { id: 8, src: './images/svgs/mysql.svg', alt: 'MySQL' },
+    { id: 9, src: './images/svgs/sass.svg', alt: 'SASS' },
   ];
 
   return (
-    <section className="hero-section">
+    <section className="hero-section theme1">
       <div className="hero-container flex-row flex-jcenter flex-acenter">
         <div className="hero-skills">
-          {skills.map((skill, index) => {
-            return <Bubble key={index} skills={skill} />;
-          })}
+          {skills.map((skill, index) => (
+            <Bubble skill={skill} key={skill.id} />
+          ))}
         </div>
         <div className="hero">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          {(() => {
+            let indents = [];
+            for (let i = 0; i < 5; i++) {
+              indents.push(
+                <>
+                  <div> </div>
+                </>
+              );
+            }
+            return indents;
+          })()}
         </div>
-
-        <div className="whoami"></div>
       </div>
     </section>
   );

@@ -56,7 +56,7 @@ section.header {
 /* Hero */
 /* **************************************************************** */
 section.hero-section {
-  background: linear-gradient(30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(30deg, red, blue);
   background-size: 400% 400%;
   background-position: 0 0;
   animation: wipe 15s ease infinite;
@@ -111,17 +111,24 @@ section.hero-section {
   animation: rainup 0.7s ease-in forwards;
 }
 
+.hero div:nth-child(1) {
+  background-color: #08090d;
+}
 .hero div:nth-child(2) {
   animation-delay: 100ms;
+  background-color: #163a59;
 }
 .hero div:nth-child(3) {
   animation-delay: 200ms;
+  background-color: #939f7f;
 }
 .hero div:nth-child(4) {
   animation-delay: 300ms;
+  background-color: #8c5e85;
 }
 .hero div:nth-child(5) {
   animation-delay: 400ms;
+  background-color: #f2efdf;
 }
 
 @keyframes raindown {
@@ -159,10 +166,11 @@ section.hero-section {
 /* Hero skills */
 
 .skill-bubble img {
-  display: none;
+  /* display: none; */
   height: 100%;
   width: 100%;
-  border-radius: 50%;
+  padding: 20%;
+  /* border-radius: 50%; */
 }
 
 .skill-bubble {
@@ -178,6 +186,9 @@ section.hero-section {
 
   border-radius: 50%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: centerl;
 }
 
 .skill-bubble:after {
@@ -190,7 +201,7 @@ section.hero-section {
   border-radius: 50%;
   box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
 
-  content: "";
+  content: '';
   left: 5%;
   top: 0;
   height: 100%;
@@ -319,4 +330,14 @@ section.hero-section {
 section.footer {
   background-color: var(--secondary-color);
   color: white;
+}
+
+/* ********************************************************************** */
+/* Theme */
+/* ********************************************************************** */
+section.hero-section.theme1 {
+  background: linear-gradient(30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  background-position: 0 0;
+  animation: wipe 15s ease infinite;
 }
